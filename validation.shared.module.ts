@@ -15,7 +15,9 @@ const COMPONENTS = [
   exports: [...COMPONENTS],
 })
 export class ValidationSharedModule {
+
   public constructor(translate: TranslateService) {
     translate.setTranslation('es', ES, true);
   }
+
 }
