@@ -28,4 +28,4 @@ export const VALIDATION_TESTING_COMPONENTS = [
   exports: [...VALIDATION_TESTING_COMPONENTS],
   declarations: [...VALIDATION_TESTING_COMPONENTS],
 })
-export class ValidationTestingModuleModule { }
+export class ValidationTestingModule { }
