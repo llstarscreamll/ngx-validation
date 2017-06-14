@@ -50,16 +50,16 @@ export class ValidationErrorsComponent implements OnInit {
    * @param string controlError
    */
   public getParams(controlError: string): any {
-    let params = {};
-    let errors = this.validationErrors;
+    const params = {};
+    const errors = this.validationErrors;
 
     switch (controlError) {
-      case "minlength":
-      case "maxlength":
+      case 'minlength':
+      case 'maxlength':
         params['requiredLength'] = errors[controlError].requiredLength;
         break;
 
-      case "pattern":
+      case 'pattern':
         params['requiredPattern'] = errors[controlError].requiredPattern;
         break;
 

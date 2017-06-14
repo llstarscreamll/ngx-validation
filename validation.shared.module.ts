@@ -1,9 +1,9 @@
-import { CommonModule } from "@angular/common";
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { TranslateService, TranslateModule } from "@ngx-translate/core";
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 
-import { ES } from "app/validation/translations/es";
-import { ValidationErrorsComponent } from "app/validation/components/validation-errors.component";
+import { ES } from 'app/validation/translations/es';
+import { ValidationErrorsComponent } from 'app/validation/components/validation-errors.component';
 
 const COMPONENTS = [
   ValidationErrorsComponent
