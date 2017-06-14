@@ -2,7 +2,7 @@
 import { async, ComponentFixture, fakeAsync, TestBed, inject, getTestBed, tick } from '@angular/core/testing';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
-import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { ES } from './../translations/es';
 import { ValidationErrorsComponent } from './validation-errors.component';
@@ -40,7 +40,7 @@ describe('ValidationErrorsComponent', () => {
   });
 
   it('should NOT SHOW errors if field is pristine and untouched', () => {
-    let group = new FormGroup({
+    const group = new FormGroup({
       name: new FormControl('', [Validators.required]),
     });
 
@@ -55,11 +55,11 @@ describe('ValidationErrorsComponent', () => {
     expect(component.control.pristine).toBe(true);
     expect(component.control.untouched).toBe(true);
     expect(component.showErrors).toBe(false);
-    expect(fixture.nativeElement.textContent).not.toContain("Este campo es obligatorio.");
+    expect(fixture.nativeElement.textContent).not.toContain('Este campo es obligatorio.');
   });
 
   it('should show default flat messages', () => {
-    let group = new FormGroup({
+    const group = new FormGroup({
       name: new FormControl('', [Validators.required]),
     });
 
@@ -76,11 +76,11 @@ describe('ValidationErrorsComponent', () => {
     expect(component.areErrorsDisplayable).toBe(true, 'errors are displayable');
     expect(component.hasErrors).toBe(true, 'the field has errors');
     expect(component.showErrors).toBe(true, 'showErrors = true');
-    expect(fixture.nativeElement.textContent).toContain("Este campo es obligatorio.");
+    expect(fixture.nativeElement.textContent).toContain('Este campo es obligatorio.');
   });
 
   it('should show default messages with certain params', () => {
-    let group = new FormGroup({
+    const group = new FormGroup({
       name: new FormControl('a', [Validators.minLength(2)]),
     });
 
@@ -99,17 +99,17 @@ describe('ValidationErrorsComponent', () => {
     expect(component.getParams('minlength')).toEqual({'requiredLength': 2, 'value': 'a'});
 
     // should see message with the Validatior.minLength param
-    expect(fixture.nativeElement.textContent).toContain("Mínimo 2 caracteres.");
+    expect(fixture.nativeElement.textContent).toContain('Mínimo 2 caracteres.');
   });
 
   it('should show apiErrors if any', () => {
-    let group = new FormGroup({
+    const group = new FormGroup({
       name: new FormControl('a')
     });
 
     component.reactiveForm = group;
     component.controlName = 'name';
-    let msg = 'this name is already taken!!';
+    const msg = 'this name is already taken!!';
 
     component.apiErrors = {
       name: [msg]

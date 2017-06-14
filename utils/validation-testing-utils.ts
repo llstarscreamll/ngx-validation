@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, NgModule } from '@angular/core';
 
 @Component({
   selector: 'validation-errors',
@@ -22,3 +22,10 @@ export class ValidationErrorsComponent {
 export const VALIDATION_TESTING_COMPONENTS = [
     ValidationErrorsComponent
 ];
+
+@NgModule({
+  imports: [],
+  exports: [...VALIDATION_TESTING_COMPONENTS],
+  declarations: [...VALIDATION_TESTING_COMPONENTS],
+})
+export class ValidationTestingModuleModule { }
